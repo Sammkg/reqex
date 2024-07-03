@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tr{
+            color: green;
+        }
+        .fr{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p id="validation">Почтанды жаз</p>
+    <input type="text" id="email" oninput="validationEmail(event)">
+    <script>
+        function validationEmail(event){
+            // console.log(event.target.value)
+            let p = document.getElementById("validation")
+            let value = event.target.value
+        const re =
+        /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        re.test(value)
+        ? p.innerHTML = "<span class='tr'>Почтанды туура жаздын, азаматсын</span>"
+        :p.innerHTML = "<span class='fr'>Почтанды туура жаз, аракет кыл</span>"
+        }    
+        // validationEmail("argen@gmail.com")
+
+        // let reqex = new RegExp("шаблон","шаблон")
+        // let reqex = /шаблон/
+        // let str = "Любо, братцы, любо"
+        // let res = str.match(/любо/i)
+        // console.log(res)
+
+        // let str = 'Мен Js тилин жакшы кором'
+        // let reqex = /кором/
+        // console.log(reqex.test(str))
+
+        // alert('We will, we will'.replace(/we/ig,'I'))
+    </script>
+</body>
+</html>
